@@ -8,7 +8,7 @@ mean((mpg-predict(lm.fit, Auto))[-train]^2)
 #second fitting 
 lm.fit2=lm(mpg~poly(horsepower,2), data=Auto, subset=train)
 mean((mpg-predict(lm.fit2, Auto))[-train]^2)
-#third set of fittring
+#third set of fitting
 lm.fit3=lm(mpg~poly(horsepower,3), data=Auto, subset= train)
 mean((mpg-predict(lm.fit3, Auto))[-train]^2)
 
@@ -20,7 +20,12 @@ mean((mpg-predict(lm.fit, Auto))[-train]^2)
 #second fitting 
 lm.fit2=lm(mpg~poly(horsepower,2), data=Auto, subset=train)
 mean((mpg-predict(lm.fit2, Auto))[-train]^2)
-#third set of fittring
+#third set of fitting
 lm.fit3=lm(mpg~poly(horsepower,3), data=Auto, subset= train)
 mean((mpg-predict(lm.fit3, Auto))[-train]^2)
 
+
+glm.fit = glm(mpg~horsepower, data= Auto)
+coef(glm.fit)
+
+l,
