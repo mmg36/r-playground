@@ -28,18 +28,20 @@ colnames(d1) = c(xval, yval)
 ggplot(data=d1) + geom_point(mapping = aes(x=xval,y=V1))
 
 
-m1 = matrix(cv.error.10, ncol=1, byrow=TRUE)
-m2 = matrix(cv.error, ncol=1, byrow=TRUE)
-m3 = 1: 10
+y10 = c(matrix(cv.error.10, ncol=1, byrow=TRUE))
+m2 = c(matrix(cv.error, ncol=1, byrow=TRUE))
+y1 = c(1: 10)
 for (i in 1:10){
-  if (i<6) {m3[i]=m2[i]}
-  else {m3[i]=0}
+  if (i<6) {y1[i]=m2[i]}
+  else {y1[i]=20}
 }
+x = 1:10
   
-d1 = as.data.frame(m1, stringAsFactors=FALSE)
-d1$xval = 1:10
-d1$cverror = as.data.frame(m3, stringAsFactors=FALSE)
+d1 = data.frame(x,y1,y10)
 
 ggplot(data=d1) +
-  geom_point(mapping = aes(x=xval,y=V1)) +
-  geom_point(mapping = aes(x=xvall,y=cverror.m3))
+  geom_point(mapping = aes(x=x,y=y1), color = 'darkred') +
+  geom_point(mapping = aes(x=x,y=y10))
+
+y10 = 1:10 
+print (y10)
